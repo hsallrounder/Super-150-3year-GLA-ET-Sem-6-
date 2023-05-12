@@ -1,119 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Twitter Clone - Final</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="sidebar">
-      <i class="fab fa-twitter"></i>
-      <div class="sidebarOption active">
-        <span class="material-icons"> home </span>
-        <h2>Home</h2>
-      </div>
+<%- include("partials/header") %>
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
 
+    <div class="container">
+        <div class="row">
+            
+            <%- include("./partials/navbar") %>
+            
+            <div class="main-content-container col-10 col-md-8 col-lg-6">
+                <h1 class="fw-bold titleContainer">Home</h1>
+                <!-- --------- -->
+                
+                <%- include("./partials/modal") %>
+                <!-- ----- -->
 
-      <div class="sidebarOption">
-        <span class="material-icons"> perm_identity </span>
-        <h2>Profile</h2>
-      </div>
+                <div class="mb-3 postContainer">
+                    <div class="userImageContainer">
+                        <img src="/images/profilePic.jpeg" alt="User Profile">
+                    </div>
+                    
+                    <div class="textareaContainer">
+                        
+                            <textarea id="post-text" name="" id="" cols="30" rows="3" placeholder="What's happening?"></textarea>
+                            <button id="submitPostButton" type="submit">Post</button>
+                      
+                    </div>
 
-     
+                   
+                </div>
+                <div>
+                    <div class="postsContainer"></div>
+                </div>
+                
+            </div>
+            <div class="d-none d-md-block col-md-2 col-lg-4">Third Column</div>
+        </div>
     </div>
 
-    <div class="feed">
-      <div class="feed__header">
-        <h2>Home</h2>
-      </div>
-
-      <div class="tweetBox">
-        <form>
-          <div class="tweetbox__input">
-            <img
-              src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-              alt=""
-            />
-            <input type="text" placeholder="What's happening?" />
-          </div>
-          <button class="tweetBox__tweetButton">Tweet</button>
-        </form>
-      </div>
-
-      <div class="post">
-        <div class="post__avatar">
-          <img
-            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            alt=""
-          />
-        </div>
-
-        <div class="post__body">
-          <div class="post__header">
-            <div class="post__headerText">
-              <h3>
-                SharmaMa'am
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@madame</span
-                >
-              </h3>
-            </div>
-            <div class="post__headerDescription">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          
-          <div class="post__footer">
-            <span class="material-icons"> repeat </span>
-            <span class="material-icons"> favorite_border </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="post">
-        <div class="post__avatar">
-          <img
-            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            alt=""
-          />
-        </div>
-
-        <div class="post__body">
-          <div class="post__header">
-            <div class="post__headerText">
-              <h3>
-                SharmaMa'am
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@madame</span
-                >
-              </h3>
-            </div>
-            <div class="post__headerDescription">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          
-          <div class="post__footer">
-            <span class="material-icons"> repeat </span>
-            <span class="material-icons"> favorite_border </span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="widgets">
-      <div class="widgets__input">
-        <span class="material-icons widgets__searchIcon"> search </span>
-        <input type="text" placeholder="Search Twitter" />
-    </div>
-  </body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/jQuery.js"></script>
+<script src="/js/common.js"></script>
+<%- include("partials/footer") %>
